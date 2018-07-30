@@ -1,5 +1,5 @@
 # custom_kmeans
-Implementation of the k-means algorithm with customizable distance, and averaging function
+Python implementation of the k-means algorithm with customizable distance, and averaging function
 
 ## Motivation
 The k-means algorithm is a well-known unsupervised learning method that can identify clusters in data. The original version of the k-means algorithm uses Euclidean distance between points as a measure of similarity/difference. However due to the [*the curse of dimensionality*](https://en.wikipedia.org/wiki/Curse_of_dimensionality#Distance_functions), Euclidean distance may not be the best option. Therefore, we may want to try different distance functions. A commonly proposed solution is to use cosine distance. As of July 2018, the sklearn implementation of KMeans does not support changing distance metrics and averaging functions, so I've implemented a version here that supports this.
