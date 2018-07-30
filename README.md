@@ -2,7 +2,7 @@
 Implementation of the k-means algorithm with customizable distance, and averaging function
 
 ## Motivation
-The k-means algorithm is a well-known unsupervised learning method that can identify clusters in data. The original version of the k-means algorithm uses Euclidean distance between points as a measure of similiarity/difference. However due to the [*the curse of dimensionality*](https://en.wikipedia.org/wiki/Curse_of_dimensionality#Distance_functions), Euclidean distance may not be the best option. Therefore, we may want to try different distance functions. A commonly proposed distance function is to use cosine distance. As of July 2018, the sklearn implementation of KMeans does not support changing distance metrics and averaging functions, so I've implemented a version here.
+The k-means algorithm is a well-known unsupervised learning method that can identify clusters in data. The original version of the k-means algorithm uses Euclidean distance between points as a measure of similiarity/difference. However due to the [*the curse of dimensionality*](https://en.wikipedia.org/wiki/Curse_of_dimensionality#Distance_functions), Euclidean distance may not be the best option. Therefore, we may want to try different distance functions. A commonly proposed solution is to use cosine distance. As of July 2018, the sklearn implementation of KMeans does not support changing distance metrics and averaging functions, so I've implemented a version here.
 
 Aside from dimensionality, another problem that is tackled by customizable distance and averaging functions is 'weirdly' shaped clusters.
 
@@ -16,7 +16,7 @@ To use, import like this: `from custom_kmeans import KMeans`.
 ## Docs
 class KMeans(k, n_init=10, metric=distance.euclidean, 
         average_fn=lambda x: np.mean(x, axis=0), max_iter=100)
-###Parameters
+### Parameters
 k <int>: Number of clusters
 
 n_init <int>: Number of initializations to try
@@ -30,7 +30,7 @@ average_fn <fn>: A function that takes in a matrix X
 max_iter <int>: Maximum number of iterations to run before the 
                     algorithm terminates
 
-###Attributes
+### Attributes
 inertia_ <float>: Sum of distances for each point to its centroid
                     Where distance is taken as the metric argument.
 
