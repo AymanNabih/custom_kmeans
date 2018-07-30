@@ -52,7 +52,7 @@ fit, fit_predict, predict
 These behave as in [scikit learn's implementation](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans.transform)
 
 ## Example
-![Moons](Moons.png)
+![Moons](imgs/Moons.png)
 
 In this example, we want to put each moon in it's own cluster. We see that using Euclidean distance doesn't get us what we want as the left side of the U-shaped moon is close (in terms of Euclidean distance) to points on the other moon. To solve this I've implemented a custom distance function that assumes one point is the critical point of a parabola defined by y = ax^2 +bx+c, where a is either -1 or +1. It then calculates the distance as the difference in the actual y coordinate of the point and the predicted y coordinate by the parabola. 
 
