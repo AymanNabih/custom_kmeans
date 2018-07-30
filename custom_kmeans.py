@@ -41,7 +41,7 @@ def _kmeans(X, k, metric, average_fn, max_iter):
         assignments <array>: A list of assignments.
     """
 
-    centroids = X[np.random.randint(X.shape[0], size=k), :]
+    centroids = X[np.random.choice(X.shape[0], size=k, replace=False), :]
     inertia, delta = None,  100
     for _ in range(max_iter):
         distances = np.array([np.apply_along_axis(lambda c: metric(x, c), 1, centroids) for x in X])
