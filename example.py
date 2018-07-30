@@ -35,11 +35,11 @@ def custom_dist(u, v):
     c1 = quadratic(-1*a1, -1*b1, v[1], v[0])
     c2 = quadratic(-1*a2, -1*b2, v[1], v[0])
 
-    p1 = [u[0], quadratic(a1, b1, c1, u[0])]
-    p2 = [u[0], quadratic(a2, b2, c2, u[0])]
-    proposed = [p1, p2]
+    p1 = quadratic(a1, b1, c1, u[0]) - u[1]
+    p2 = quadratic(a2, b2, c2, u[0]) - u[1]
 
-    return min([distance.euclidean(u, p) for p in proposed])
+    proposed = [p1**2, p2**2]
+    return min(proposed)
 
 def custom_av(points):
     """
