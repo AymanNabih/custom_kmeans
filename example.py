@@ -6,7 +6,7 @@ Description: An example demonstrating the usage of KMeans
 
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_moons
-from kmeans import KMeans
+from custom_kmeans import KMeans
 from scipy.spatial import distance
 
 def custom_dist(u, v):
