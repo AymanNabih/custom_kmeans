@@ -13,9 +13,17 @@ This implementation is modelled after [scikit learn's implemenation](http://scik
 
 To use, import like this: `from custom_kmeans import KMeans`.
 
+[scipy.spatial.distance](https://docs.scipy.org/doc/scipy/reference/spatial.distance.html) has some distance functions that work out of the box. Or you can write your own distance function. The only requirement is that the function must take in two vectors and return a number.
+
+The averaging function can also be customized. The averaging function should take in a list of points and return another point with the same number of dimension representing the 'average' of those points.
+
+See the Examples section below for an example on using custom distances and averaging functions for the 2-dimensional 'moons' dataset.
+
 ## Docs
 class KMeans(k, n_init=10, metric=distance.euclidean, 
         average_fn=lambda x: np.mean(x, axis=0), max_iter=100)
+
+The default parameters give the usual KMeans algorithm with Euclidean metric and using the mean to compute cluster centroids.
 ### Parameters
 k <int>: Number of clusters
 
@@ -38,12 +46,16 @@ cluster_centers_ <2d array>: Each row represents the coordinates of one centroid
 
 labels_ <array>: A list of assignments.
 
-###Functions
+### Functions
 fit, fit_predict, predict
 
 These behave as in [scikit learn's implemenation](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans.transform)
 
+## Example
+![Moons](Moons.png)
 
+In this example, we want to put each moon in it's own cluster. We see that u
+See examples.py
 
 
 
