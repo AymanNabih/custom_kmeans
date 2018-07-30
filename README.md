@@ -54,7 +54,8 @@ These behave as in [scikit learn's implemenation](http://scikit-learn.org/stable
 ## Example
 ![Moons](Moons.png)
 
-In this example, we want to put each moon in it's own cluster. We see that u
+In this example, we want to put each moon in it's own cluster. We see that using Euclidean distance doesn't get us what we want as the left side of the U-shaped moon is close (in terms of Euclidean distance) to points on the other moon. To solve this I've implemented a custom distance function that assumes one point is the local min or max of a parabola defined by $y = ax^2 +bx+c$, where a is either $-1$ or $+1$
+
 See examples.py
 
 
